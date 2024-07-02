@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm} from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
@@ -20,7 +20,7 @@ import CommonHeadingTypography from '../../Components/Common/CommonHeadingTypogr
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  const { control, handleSubmit, formState: { errors } } = useForm<LoginFormInterface>({
+  const { control, handleSubmit } = useForm<LoginFormInterface>({
     resolver: yupResolver(LoginFormSchema),
   });
   const { register: login, loading, error } = useRegister('login');

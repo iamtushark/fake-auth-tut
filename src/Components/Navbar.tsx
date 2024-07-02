@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, IconButton } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuthDispatch, logoutAction, useAuthState } from '../Contexts/AuthContext/Context';
