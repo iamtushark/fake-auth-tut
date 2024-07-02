@@ -48,7 +48,7 @@ const AsyncPrivateRoute: React.FC<AsyncPrivateRouteProps> = ({ children}) => {
   }
 
   if (user.authLevel!= "admin" && user.id !== pathId) {
-    logoutAction(useAuthDispatch())
+    logoutAction(useAuthDispatch)
     return <Navigate to="/login" />;
   }
 

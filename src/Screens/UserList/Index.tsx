@@ -9,7 +9,7 @@ import CommonHeadingTypography from '../../Components/Common/CommonHeadingTypogr
 import CommonErrorTypography from '../../Components/Common/CommonErrorTypography';
 import CommonFormBox from '../../Components/Common/CommonFormBox';
 import CommonBlackSubmitButton from '../../Components/Common/CommonBlackSubmitButton';
-import { List, ListItem, ListItemText, CircularProgress, Typography, Button } from '@mui/material';
+import { List, ListItem, ListItemText, CircularProgress, Typography } from '@mui/material';
 
 const UsersListPage: React.FC = () => {
   const [users, setUsers] = useState<Record<string, userInfo>>({});

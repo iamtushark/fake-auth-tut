@@ -23,7 +23,7 @@ export const loadEntries = async (): Promise<dbEntries> => {
 };
 
 export const getEntryById = async (id: string): Promise<userInfo | null> => {
-	let data = await localforage.getItem<dbEntries>('users');
+	const data = await localforage.getItem<dbEntries>('users');
 	if (!data) {
 		await loadEntries();
 		return null;
@@ -87,7 +87,7 @@ export const updateEntry = async (id: string, value: userInfo): Promise<void> =>
 };
 
 export const getAuthenticationLevel = async (id: string): Promise<'admin' | 'users' | null> => {
-	let data = await localforage.getItem<dbEntries>('users');
+	const data = await localforage.getItem<dbEntries>('users');
 	if (data) {
 		if (data.admin[id]) {
 			return 'admin';
@@ -160,7 +160,7 @@ export const signup = async (id: string, user: userInfo, key: 'admin' | 'users')
 };
 
 export const getLoggedInUserInfo = async (): Promise<{ id: string; userInfo: userInfo; authLevel: 'admin' | 'users' } | null> => {
-	let data = await localforage.getItem<dbEntries>('users');
+	const data = await localforage.getItem<dbEntries>('users');
 	if (data && data.loggedInUser) {
 		const authLevel = data.admin[data.loggedInUser] ? 'admin' : 'users';
 		return { id: data.loggedInUser, userInfo: data.admin[data.loggedInUser] || data.users[data.loggedInUser], authLevel };
@@ -177,7 +177,7 @@ export const getAllUsers = async (): Promise<Record<string, userInfo>> => {
 };
 
 export const logout = async (): Promise<void> => {
-	let data = await localforage.getItem<dbEntries>('users');
+	const data = await localforage.getItem<dbEntries>('users');
 	if (data) {
 		data.loggedInUser = '';
 		await localforage.setItem('users', data);
