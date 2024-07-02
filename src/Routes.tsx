@@ -10,6 +10,7 @@ import LoginPage from './Screens/Login/Index';
 import { AuthProvider, useAuthDispatch , logoutAction} from './Contexts/AuthContext/Context';
 import ProfilePage from './Screens/Profile/Index';
 import Navbar from './Components/Navbar';
+import LoginPromptPage from './Screens/Home/Index';
 
 interface AsyncPrivateRouteProps {
   children: JSX.Element;
@@ -62,6 +63,7 @@ const RoutesComponent: React.FC = () => {
       <Router>
       <Navbar/>
         <Routes>
+          <Route path="/" element={<LoginPromptPage/>}/>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
