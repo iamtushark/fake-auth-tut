@@ -33,8 +33,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "black" }}>
-      <Toolbar>
+    <AppBar position="sticky" sx={{ backgroundColor: "black", height: "10vh" }}>
+      <Toolbar sx={{flexGrow : 1}}>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Fake-Auth
         </Typography>
